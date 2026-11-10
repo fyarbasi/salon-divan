@@ -1,0 +1,12 @@
+{
+  "name": "salon-divan",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images": "node scripts/optimize-images.mjs",
+    "dev": "npx --yes serve site -l 4173"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}
