@@ -154,19 +154,12 @@ p { margin: 0; text-wrap: pretty; }
   gap: 24px;
 }
 
-/* Logo: kemer amblemi + isim */
+/* Logo: isim */
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-}
-.brand-mark {
-  flex: none;
-  width: 30px;
-  height: 42px;
-  color: var(--brass);
-  overflow: visible;
 }
 .brand-text {
   display: flex;
@@ -188,7 +181,6 @@ p { margin: 0; text-wrap: pretty; }
   color: var(--brass);
   white-space: nowrap;
 }
-.brand:hover .brand-mark { color: var(--brass-hover); }
 
 .nav {
   display: none;
@@ -644,7 +636,6 @@ p { margin: 0; text-wrap: pretty; }
 }
 .footer-inner { display: grid; gap: 24px; }
 .brand-footer { color: var(--on-plum); gap: 16px; }
-.brand-footer .brand-mark { width: 40px; height: 56px; }
 .brand-footer .brand-name { font-size: 1.85rem; }
 .footer-slogan {
   margin-top: 16px;
