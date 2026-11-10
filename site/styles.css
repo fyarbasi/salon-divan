@@ -23,7 +23,7 @@
   --brass-hover: oklch(0.86 0.09 84);
   --brass-ink: oklch(0.50 0.095 65);
 
-  --font-display: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
+  --font-display: "Libre Caslon Text", "Baskerville", Georgia, serif;
   --font-body: "Jost", "Futura", "Avenir Next", system-ui, sans-serif;
 
   --gutter: clamp(16px, 4vw, 44px);
@@ -57,19 +57,8 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 figure { margin: 0; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; margin: 0; text-wrap: balance; }
 
-/* Bodoni büyük boyutta çok ince çizgilere geçiyor; sabit bir optik boyutla
-   ince çizgiler kalınlaşır, başlıklar uzaktan da okunur. */
-h1, h2, h3,
-.occasions,
-.brand-name,
-.feature-num,
-.info dd,
-.footer-slogan {
-  font-optical-sizing: none;
-  font-variation-settings: "opsz" 16;
-}
 p { margin: 0; text-wrap: pretty; }
 ::selection { background: var(--brass); color: var(--plum-950); }
 
@@ -168,9 +157,9 @@ p { margin: 0; text-wrap: pretty; }
 }
 .brand-name {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 500;
-  letter-spacing: 0.015em;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   white-space: nowrap;
 }
 .brand-sub {
@@ -250,16 +239,16 @@ p { margin: 0; text-wrap: pretty; }
 }
 
 .hero-title {
-  font-size: clamp(3.2rem, 1.1rem + 8vw, 7.2rem);
-  line-height: 0.96;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.7rem, 1rem + 6.6vw, 6rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
   margin: 0.32em 0 0.4em;
 }
 .hero-title .line {
   display: block;
   overflow: hidden;
-  padding: 0 0.12em 0.06em 0;
-  margin-bottom: -0.06em;
+  padding: 0 0.12em 0.14em 0;
+  margin-bottom: -0.14em;
 }
 .hero-title .line > span { display: inline-block; }
 .hero-title em { font-style: italic; color: var(--brass); }
@@ -343,8 +332,8 @@ p { margin: 0; text-wrap: pretty; }
   border-top: 1px solid var(--line-on-plum);
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(1.25rem, 0.9rem + 1.6vw, 2.15rem);
-  line-height: 1.2;
+  font-size: clamp(1.15rem, 0.85rem + 1.4vw, 1.9rem);
+  line-height: 1.3;
   color: var(--on-plum);
 }
 .occasions li { display: inline-flex; align-items: center; }
@@ -381,9 +370,9 @@ p { margin: 0; text-wrap: pretty; }
   padding-block: clamp(56px, 9vw, 128px);
 }
 .salon-intro h2 {
-  font-size: clamp(2rem, 1.2rem + 3.4vw, 4rem);
-  line-height: 1.04;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.85rem, 1.1rem + 3vw, 3.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
   max-width: 17ch;
 }
 .salon-intro p {
@@ -447,8 +436,8 @@ p { margin: 0; text-wrap: pretty; }
   margin-bottom: 10px;
 }
 .feature h3 {
-  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.6rem);
-  line-height: 1.1;
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem);
+  line-height: 1.18;
   margin-bottom: 14px;
 }
 .feature p {
@@ -499,9 +488,9 @@ p { margin: 0; text-wrap: pretty; }
   margin-bottom: clamp(32px, 5vw, 56px);
 }
 .gallery-head h2 {
-  font-size: clamp(2.2rem, 1.4rem + 3.4vw, 4.2rem);
-  line-height: 1;
-  letter-spacing: -0.015em;
+  font-size: clamp(2rem, 1.3rem + 3vw, 3.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .gallery-grid {
@@ -549,9 +538,9 @@ p { margin: 0; text-wrap: pretty; }
 }
 
 .contact h2 {
-  font-size: clamp(2.1rem, 1.3rem + 3.2vw, 3.9rem);
-  line-height: 1.04;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.9rem, 1.2rem + 2.8vw, 3.4rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
   max-width: 15ch;
 }
 .contact-lead {
@@ -609,9 +598,9 @@ p { margin: 0; text-wrap: pretty; }
 .info dt { font-size: 0.92rem; color: var(--brass); }
 .info dd {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
-  line-height: 1.35;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
+  line-height: 1.45;
 }
 .info dd a { text-decoration: none; }
 .info dd a:hover { color: var(--brass); }
@@ -636,7 +625,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 .footer-inner { display: grid; gap: 24px; }
 .brand-footer { color: var(--on-plum); gap: 16px; }
-.brand-footer .brand-name { font-size: 1.85rem; }
+.brand-footer .brand-name { font-size: 1.7rem; }
 .footer-slogan {
   margin-top: 16px;
   font-family: var(--font-display);
