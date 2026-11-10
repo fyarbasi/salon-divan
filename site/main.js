@@ -3,11 +3,6 @@
 // ---- Ayarlar ---------------------------------------------------------------
 const WHATSAPP_NUMBER = "905415416698";
 
-// Instagram'daki son paylaşımları sitede göstermek için behold.so'dan ücretsiz bir
-// "JSON feed" adresi alıp buraya yapıştırın (README.md'de adım adım anlatılıyor).
-// Boş kaldığı sürece Instagram bölümünde sadece "takip edin" butonu görünür.
-const INSTAGRAM_FEED_URL = "";
-
 // Galerideki fotoğraflar (site/img altında, npm run images ile üretilir)
 const GALLERY = [
   { name: "salon-orta", alt: "Masaları kurulmuş salonun ortasından genel görünüm", h: 1600 },
@@ -125,34 +120,6 @@ form.addEventListener("submit", (e) => {
   const text = lines.join("\n");
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
 });
-
-// ---- Instagram akışı (isteğe bağlı) ----------------------------------------
-async function loadInstagram() {
-  if (!INSTAGRAM_FEED_URL) return;
-  const box = $("[data-insta-feed]");
-  try {
-    const res = await fetch(INSTAGRAM_FEED_URL);
-    if (!res.ok) throw new Error(res.status);
-    const data = await res.json();
-    const posts = (Array.isArray(data) ? data : data.posts || []).slice(0, 6);
-    if (!posts.length) return;
-    box.innerHTML = posts
-      .map((p) => {
-        const img =
-          p.sizes?.medium?.mediaUrl ||
-          (p.mediaType === "VIDEO" ? p.thumbnailUrl : p.mediaUrl);
-        const cap = (p.prunedCaption || p.caption || "Salon Divan Instagram paylaşımı")
-          .replace(/"/g, "&quot;")
-          .slice(0, 140);
-        return `<a href="${p.permalink}" target="_blank" rel="noopener"><img src="${img}" alt="${cap}" loading="lazy"></a>`;
-      })
-      .join("");
-    box.hidden = false;
-  } catch (err) {
-    console.warn("Instagram akışı yüklenemedi", err);
-  }
-}
-loadInstagram();
 
 // ---- Yıl ---------------------------------------------------------------------
 const year = $("[data-year]");

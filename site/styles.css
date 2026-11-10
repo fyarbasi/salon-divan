@@ -57,7 +57,19 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 figure { margin: 0; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 400; margin: 0; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; text-wrap: balance; }
+
+/* Bodoni büyük boyutta çok ince çizgilere geçiyor; sabit bir optik boyutla
+   ince çizgiler kalınlaşır, başlıklar uzaktan da okunur. */
+h1, h2, h3,
+.occasions,
+.brand-name,
+.feature-num,
+.info dd,
+.footer-slogan {
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 16;
+}
 p { margin: 0; text-wrap: pretty; }
 ::selection { background: var(--brass); color: var(--plum-950); }
 
@@ -112,8 +124,6 @@ p { margin: 0; text-wrap: pretty; }
 .btn-line { border-color: oklch(0.95 0.012 80 / 0.4); color: var(--on-plum); }
 .btn-line:hover { border-color: var(--brass); color: var(--brass); }
 
-.btn-ink { background: var(--ink); color: var(--ivory); }
-.btn-ink:hover { background: var(--plum-700); }
 
 .text-link {
   color: var(--brass);
@@ -389,6 +399,30 @@ p { margin: 0; text-wrap: pretty; }
   max-width: 44ch;
   font-size: clamp(1.05rem, 1rem + 0.25vw, 1.18rem);
 }
+.facts {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line-on-ivory);
+  display: grid;
+  gap: 12px;
+}
+.facts li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.facts li::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  background: var(--brass-ink);
+  transform: rotate(45deg);
+}
 @media (min-width: 900px) {
   .salon-intro {
     grid-template-columns: 7fr 5fr;
@@ -506,55 +540,6 @@ p { margin: 0; text-wrap: pretty; }
 .gallery-item:nth-child(3n + 2) img { aspect-ratio: 3 / 4; object-fit: cover; }
 .gallery-item:nth-child(4n) img { aspect-ratio: 1; object-fit: cover; }
 
-/* ---------- Instagram ---------- */
-
-.insta {
-  background: var(--ivory-2);
-  color: var(--ink);
-  padding-block: clamp(56px, 8vw, 104px);
-}
-.insta-inner {
-  display: grid;
-  gap: 24px;
-  align-items: center;
-}
-.insta h2 {
-  font-size: clamp(1.7rem, 1.2rem + 2vw, 2.8rem);
-  line-height: 1.1;
-  max-width: 22ch;
-  margin-bottom: 10px;
-}
-.insta p { color: var(--ink-muted); }
-.insta .btn { justify-self: start; }
-@media (min-width: 860px) {
-  .insta-inner { grid-template-columns: 1fr auto; gap: 48px; }
-}
-
-.insta-feed {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: clamp(28px, 4vw, 48px);
-}
-.insta-feed[hidden] { display: none; }
-@media (min-width: 860px) {
-  .insta-feed { grid-template-columns: repeat(6, 1fr); gap: 12px; }
-}
-.insta-feed a {
-  display: block;
-  aspect-ratio: 1;
-  overflow: hidden;
-  border-radius: 6px;
-  background: var(--ivory);
-}
-.insta-feed img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.9s var(--ease-out);
-}
-.insta-feed a:hover img { transform: scale(1.05); }
-
 /* ---------- İletişim ---------- */
 
 .contact {
@@ -622,11 +607,6 @@ p { margin: 0; text-wrap: pretty; }
 }
 
 .ask .btn { margin-top: 6px; }
-.form-alt {
-  font-size: 0.92rem;
-  color: var(--on-plum-muted);
-}
-.form-alt a { color: var(--brass); text-underline-offset: 0.2em; }
 
 .info {
   margin: 0 0 28px;

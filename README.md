@@ -9,7 +9,7 @@ HTML + CSS + biraz JavaScript. Derleme adımı yok.
 |---|---|
 | `site/` | Yayındaki sitenin tamamı. Sadece bu klasör internete çıkar. |
 | `site/index.html` | Bütün metinler (adres, telefon, başlıklar) burada. |
-| `site/main.js` | Galeri listesi, WhatsApp formu, Instagram ayarı. |
+| `site/main.js` | Galeri listesi ve WhatsApp formu. |
 | `site/img/` | Web için küçültülmüş fotoğraflar (elle düzenleme, script üretir). |
 | `fotograflar/` | Orijinal fotoğraflar (WhatsApp'tan gelenler). |
 | `scripts/optimize-images.mjs` | Fotoğrafları küçültüp `site/img/` altına yazan script. |
@@ -36,13 +36,6 @@ Telefon numarası `main.js` içinde de var (`WHATSAPP_NUMBER`).
 2. `scripts/optimize-images.mjs` içindeki `PHOTOS` listesine bir satır ekle (örn. `{ src: "dosya.jpg", name: "kina-gecesi" }`).
 3. `npm run images` çalıştır.
 4. Galeride görünmesi için `site/main.js` içindeki `GALLERY` listesine ekle.
-
-**Instagram paylaşımlarını sitede göstermek (isteğe bağlı, ücretsiz):**
-1. [behold.so](https://behold.so) adresinde ücretsiz hesap aç, salonun Instagram hesabını bağla
-   (hesabın "İşletme" veya "Üretici" hesabı olması gerekir; Instagram ayarlarından tek tıkla değişir).
-2. Yeni bir feed oluştur, türü **JSON** seç, verilen adresi kopyala (`https://feeds.behold.so/...`).
-3. `site/main.js` içindeki `INSTAGRAM_FEED_URL = ""` satırına yapıştır, push et.
-   Son 6 paylaşım "Instagram" bölümünde kendiliğinden görünür, her gün güncellenir.
 
 ## Alan adı (GoDaddy DNS)
 
