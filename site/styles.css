@@ -144,28 +144,41 @@ p { margin: 0; text-wrap: pretty; }
   gap: 24px;
 }
 
-.wordmark {
+/* Logo: kemer amblemi + isim */
+.brand {
   display: inline-flex;
-  flex-direction: column;
   align-items: center;
+  gap: 12px;
   text-decoration: none;
-  line-height: 1;
-  margin: 0;
 }
-.wordmark-small {
-  font: 500 0.62rem/1 var(--font-body);
-  letter-spacing: 0.42em;
-  margin-right: -0.42em;
+.brand-mark {
+  flex: none;
+  width: 30px;
+  height: 42px;
+  color: var(--brass);
+  overflow: visible;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+}
+.brand-sub {
+  margin-top: 6px;
+  font: 500 0.6rem/1 var(--font-body);
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--brass);
+  white-space: nowrap;
 }
-.wordmark-big {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  margin-top: 3px;
-}
+.brand:hover .brand-mark { color: var(--brass-hover); }
 
 .nav {
   display: none;
@@ -196,8 +209,8 @@ p { margin: 0; text-wrap: pretty; }
   white-space: nowrap;
   transition: border-color 0.3s, color 0.3s;
 }
-@media (max-width: 340px) {
-  .header-call { padding: 0; width: 44px; justify-content: center; }
+@media (max-width: 479px) {
+  .header-call { padding: 0; width: 44px; height: 44px; justify-content: center; }
   .header-call span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 }
 .header-call svg { width: 16px; height: 16px; fill: var(--brass); }
@@ -650,10 +663,11 @@ p { margin: 0; text-wrap: pretty; }
   font-size: 0.95rem;
 }
 .footer-inner { display: grid; gap: 24px; }
-.wordmark-footer { align-items: flex-start; color: var(--on-plum); }
-.wordmark-footer .wordmark-small { margin-left: 2px; }
+.brand-footer { color: var(--on-plum); gap: 16px; }
+.brand-footer .brand-mark { width: 40px; height: 56px; }
+.brand-footer .brand-name { font-size: 1.85rem; }
 .footer-slogan {
-  margin-top: 10px;
+  margin-top: 16px;
   font-family: var(--font-display);
   font-style: italic;
   color: var(--on-plum);
